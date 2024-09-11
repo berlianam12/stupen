@@ -83,7 +83,40 @@ body {
   color: var(--primary);
 }
 
-#menu {
+/* search box */
+.navbar .search-form {
+  position: absolute;
+  top: 100%;
+  right: 7%;
+  background-color: white;
+  width: 30rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;  
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.navbar .search-form.active{
+  transform: scaleY(1);
+}
+
+.navbar .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1rem;
+  color: var(--bg);
+  padding: 1rem;
+}
+
+.navbar .search-form label{
+  cursor: pointer;
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  color: var(--bg);
+}
+
+#ticket.ticket {
   display: none;
 }
 
@@ -152,14 +185,16 @@ body {
 
 /* about */
 .about,
-.menu,
-.contact {
+.ticket,
+.contact,
+.faq {
   padding: 7rem 7% 1.4rem;
 }
 
 .about h2,
-.menu h2,
-.contact h2 {
+.ticket h2,
+.contact h2,
+.faq h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 3rem;
@@ -167,8 +202,9 @@ body {
 }
 
 .about h2 span,
-.menu h2 span,
-.contact h2 span {
+.ticket h2 span,
+.contact h2 span,
+.faq h2 span {
   color: var(--sec);
 }
 
@@ -206,15 +242,16 @@ body {
   color: var(--sec);
 }
 
-/* menu */
+/* ticket.ticket */
 
-.menu h2,
+.ticket h2,
 .contact h2 {
   margin-bottom: 1rem;
 }
 
-.menu p,
-.contact p {
+.ticket p,
+.contact p,
+.faq p {
   text-align: center;
   max-width: 30rem;
   margin: auto;
@@ -222,26 +259,36 @@ body {
   line-height: 1.6;
 }
 
-.menu .row {
+.ticket .row {
   display: flex;
   flex-wrap: wrap;
   margin-top: 5rem;
   justify-content: center;
 }
 
-.menu .row .menu-card {
+.ticket .row .ticket-card {
   text-align: center;
   padding-bottom: 4rem;
 }
 
-.menu .row .menu-card img {
+.ticket .row .ticket-card img {
   border-radius: 10%;
   width: 80%;
 }
 
-.menu .row .menu-card .menu-card-title {
+.ticket .row .ticket-card .ticket-card-title {
   margin-top: 1rem auto 0.5rem;
 }
+
+/* faq.faq */
+.faq .ask p{
+  color: var(--sec);
+  text-align: center; 
+}
+.faq .answer{
+  color: var(--primary);
+}
+
 
 /* contact */
 
@@ -346,7 +393,7 @@ footer .credit a {
     font-size: 62%;
   }
 
-  #menu {
+  #ticket.ticket {
     display: inline-block;
   }
 
@@ -380,6 +427,11 @@ footer .credit a {
     transform: scaleX(0.2);
   }
 
+  .navbar .search-form {
+    width: 90%;
+    right: 2rem;
+  }
+
   .about .row {
     flex-wrap: wrap;
   }
@@ -403,7 +455,7 @@ footer .credit a {
     font-size: 1rem;
   }
 
-  .menu p {
+  .ticket p {
     font-size: 1.2rem;
   }
 
